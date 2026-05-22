@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PerfectRishta - India's most premium, verified matrimonial service for elite matches. Find your perfect life partner today.">
+  <title>PerfectRishta - Premium Matrimonial Platform</title>
+  <!-- Google Fonts for Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-luxury-crimson">
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area" id="nav-logo-btn">
+        <div class="logo-icon"><i class="fa-solid fa-hands-praying"></i></div>
+        <div class="logo-text">
+          <span class="brand-title">PerfectRishta</span>
+          <span class="brand-subtitle">Where Hearts Align in Luxury</span>
+        </div>
+      </div>
+      
+      <!-- Primary Navigation Links -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active" id="nav-home-btn"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#dashboard" class="nav-link" id="nav-dashboard-btn"><i class="fa-solid fa-compass"></i> Discover Matches</a></li>
+          <li><a href="#shortlist" class="nav-link" id="nav-shortlist-btn"><i class="fa-solid fa-heart"></i> Shortlists</a></li>
+          <li><a href="#chat" class="nav-link" id="nav-chat-btn"><i class="fa-solid fa-comments"></i> Messages <span class="chat-badge" id="chat-count-badge" style="display:none;">0</span></a></li>
+          <li><a href="#plans" class="nav-link highlight-gold" id="nav-plans-btn"><i class="fa-solid fa-crown"></i> Premium</a></li>
+        </ul>
+      </nav>
+
+      <!-- User Session Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Theme (Crimson & Gold / Rose Gold & Ivory)">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <div class="user-profile-badge" id="user-status-area">
+          <button class="btn btn-outline" id="nav-register-btn"><i class="fa-solid fa-user-plus"></i> Register</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="app-main">
+
+    <!-- 1. HOME / LANDING PAGE VIEW -->
+    <section id="view-home" class="app-view active">
+      <!-- Premium Hero Section -->
+      <div class="hero-section" style="background-image: linear-gradient(to bottom, rgba(18, 18, 22, 0.4), rgba(18, 18, 22, 0.95)), url('assets/hero_bg.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-pretitle"><i class="fa-solid fa-crown text-gold"></i> Elite Matchmaking Service</span>
+          <h1 class="hero-title">Discover Your Sovereign Connection</h1>
+          <p class="hero-description">Connecting highly educated, cultured, and verified individuals who seek sophisticated companionships and life-long commitments.</p>
+          
+          <!-- Quick Search Bar Widget -->
+          <div class="quick-search-widget">
+            <form id="quick-search-form" class="quick-search-form">
+              <div class="form-group-inline">
+                <label for="qs-gender">Looking For</label>
+                <select id="qs-gender" class="form-control-inline">
+                  <option value="female">Elegant Bride</option>
+                  <option value="male">Handsome Groom</option>
+                </select>
+              </div>
+              <div class="form-group-inline">
+                <label for="qs-religion">Religion</label>
+                <select id="qs-religion" class="form-control-inline">
+                  <option value="all">Any Religion</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Muslim">Muslim</option>
+                  <option value="Sikh">Sikh</option>
+                  <option value="Christian">Christian</option>
+                </select>
+              </div>
+              <div class="form-group-inline">
+                <label for="qs-mother-tongue">Mother Tongue</label>
+                <select id="qs-mother-tongue" class="form-control-inline">
+                  <option value="all">Any Language</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Punjabi">Punjabi</option>
+                  <option value="Malayalam">Malayalam</option>
+                  <option value="Urdu">Urdu</option>
+                  <option value="Gujarati">Gujarati</option>
+                  <option value="Bengali">Bengali</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-gold btn-large" id="quick-search-submit-btn">
+                <i class="fa-solid fa-magnifying-glass"></i> Find Matches
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="trust-badges-bar">
+        <div class="trust-badge">
+          <div class="badge-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="badge-text">
+            <h4>100% Hand-Screened</h4>
+            <p>Every profile is manually verified</p>
+          </div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-badge">
+          <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="badge-text">
+            <h4>Secure & Confidential</h4>
+            <p>Strict privacy options for all</p>
+          </div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-badge">
+          <div class="badge-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="badge-text">
+            <h4>Highly Educated Peers</h4>
+            <p>IIT, IIM, Doctors, NRI Profiles</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Profiles Section -->
+      <div class="home-featured-section container">
+        <div class="section-heading text-center">
+          <h2 class="section-title">Royal Spotlights</h2>
+          <p class="section-subtitle">Exquisite verified profiles that recently joined our platform</p>
+          <div class="fancy-divider"><i class="fa-solid fa-heart"></i></div>
+        </div>
+        <div class="featured-grid" id="home-featured-grid">
+          <!-- Dynamic Featured Profiles Rendered Here -->
+        </div>
+        <div class="text-center margin-top-lg">
+          <button class="btn btn-outline btn-large" id="home-view-all-btn">Explore All Profiles</button>
+        </div>
+      </div>
+
+      <!-- Success Stories Section -->
+      <div class="success-stories-section">
+        <div class="container flex-row-responsive">
+          <div class="success-image-area">
+            <img src="assets/success_story.png" alt="Happy Couple" class="success-img">
+            <div class="success-badge-card">
+              <i class="fa-solid fa-heart"></i>
+              <span>Match Made in Heaven</span>
+            </div>
+          </div>
+          <div class="success-content-area">
+            <span class="tag-gold">SUCCESS STORY</span>
+            <h2 class="story-title">How Priyesh & Sunanda Met</h2>
+            <blockquote class="story-blockquote">
+              "We registered on PerfectRishta with high expectations of finding someone who shares our traditional family roots alongside our fast-paced corporate ambitions. The compatibility score was 96%, and from our very first coffee chat, we knew it was perfect. Thank you for this modern, premium matchmaking sanctuary."
+            </blockquote>
+            <p class="story-author">— Priyesh (Software Architect) & Sunanda (Pediatrician)</p>
+            <div class="story-stats">
+              <div class="story-stat-box">
+                <span class="stat-number">250K+</span>
+                <span class="stat-label">Happy Marriages</span>
+              </div>
+              <div class="story-stat-box">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Premium Privacy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. REGISTRATION / ONBOARDING VIEW -->
+    <section id="view-onboarding" class="app-view">
+      <div class="onboarding-container container">
+        <div class="onboarding-card">
+          <div class="onboarding-sidebar">
+            <div class="sidebar-header">
+              <i class="fa-solid fa-crown text-gold"></i>
+              <h3>Create Your Legacy</h3>
+              <p>Step into elite matchmaking</p>
+            </div>
+            <ul class="step-indicator-list" id="onboarding-steps-list">
+              <li class="step-indicator active" data-step="1">
+                <div class="step-num">1</div>
+                <div class="step-label">Personal details</div>
+              </li>
+              <li class="step-indicator" data-step="2">
+                <div class="step-num">2</div>
+                <div class="step-label">Community & Roots</div>
+              </li>
+              <li class="step-indicator" data-step="3">
+                <div class="step-num">3</div>
+                <div class="step-label">Career & Lifestyle</div>
+              </li>
+              <li class="step-indicator" data-step="4">
+                <div class="step-num">4</div>
+                <div class="step-label">Partner Expectations</div>
+              </li>
+            </ul>
+          </div>
+          <div class="onboarding-form-area">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="onboarding-progress" style="width: 25%;"></div>
+            </div>
+            
+            <form id="onboarding-wizard-form" class="onboarding-wizard-form">
+              <!-- STEP 1: PERSONAL DETAILS -->
+              <div class="onboarding-step-pane active" id="pane-step-1">
+                <h2 class="pane-title">Tell Us About Yourself</h2>
+                <p class="pane-subtitle">Enter your primary identifiers. All fields verified securely.</p>
+                
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-profile-created-for">Profile Created For</label>
+                    <select id="ob-profile-created-for" class="form-control" required>
+                      <option value="Self">Myself</option>
+                      <option value="Son">My Son</option>
+                      <option value="Daughter">My Daughter</option>
+                      <option value="Brother">My Brother</option>
+                      <option value="Sister">My Sister</option>
+                    </select>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-gender">Gender</label>
+                    <select id="ob-gender" class="form-control" required>
+                      <option value="female">Female (Bride)</option>
+                      <option value="male">Male (Groom)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ob-name">Full Name</label>
+                  <input type="text" id="ob-name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-dob">Date of Birth</label>
+                    <input type="date" id="ob-dob" class="form-control" required value="1998-05-15">
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-height">Height</label>
+                    <select id="ob-height" class="form-control" required>
+                      <option value="5'0\"">5'0\" (152cm)</option>
+                      <option value="5'2\"">5'2\" (157cm)</option>
+                      <option value="5'4\"" selected>5'4\" (162cm)</option>
+                      <option value="5'6\"">5'6\" (167cm)</option>
+                      <option value="5'8\"">5'8\" (172cm)</option>
+                      <option value="5'10\"">5'10\" (177cm)</option>
+                      <option value="6'0\"">6'0\" (182cm)</option>
+                      <option value="6'2\"">6'2\" (187cm)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="pane-navigation">
+                  <div></div>
+                  <button type="button" class="btn btn-gold btn-next" data-next="2">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- STEP 2: COMMUNITY & ROOTS -->
+              <div class="onboarding-step-pane" id="pane-step-2">
+                <h2 class="pane-title">Community & Cultural Roots</h2>
+                <p class="pane-subtitle">Matrimony is built on shared legacies. Fill in details about your heritage.</p>
+                
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-religion">Religion</label>
+                    <select id="ob-religion" class="form-control" required>
+                      <option value="Hindu">Hindu</option>
+                      <option value="Muslim">Muslim</option>
+                      <option value="Sikh">Sikh</option>
+                      <option value="Christian">Christian</option>
+                    </select>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-caste">Caste / Sub-Caste (Optional)</label>
+                    <input type="text" id="ob-caste" class="form-control" placeholder="E.g. Brahmin, Khatri, Sunni, Jat">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-mothertongue">Mother Tongue</label>
+                    <select id="ob-mothertongue" class="form-control" required>
+                      <option value="Hindi">Hindi</option>
+                      <option value="Punjabi">Punjabi</option>
+                      <option value="Malayalam">Malayalam</option>
+                      <option value="Urdu">Urdu</option>
+                      <option value="Gujarati">Gujarati</option>
+                      <option value="Bengali">Bengali</option>
+                    </select>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-location">Current Location</label>
+                    <input type="text" id="ob-location" class="form-control" placeholder="E.g. Mumbai, India or New York, USA" required value="Mumbai, India">
+                  </div>
+                </div>
+
+                <div class="pane-navigation">
+                  <button type="button" class="btn btn-outline btn-prev" data-prev="1"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                  <button type="button" class="btn btn-gold btn-next" data-next="3">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- STEP 3: CAREER & LIFESTYLE -->
+              <div class="onboarding-step-pane" id="pane-step-3">
+                <h2 class="pane-title">Professional Profile & Lifestyle</h2>
+                <p class="pane-subtitle">Connect with matches who match your standards and credentials.</p>
+
+                <div class="form-group">
+                  <label for="ob-education">Highest Education</label>
+                  <input type="text" id="ob-education" class="form-control" placeholder="E.g. MBA from IIM, B.Tech IIT, MD Medicine" required value="MBA, IIM Bangalore">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-profession">Profession</label>
+                    <input type="text" id="ob-profession" class="form-control" placeholder="E.g. Product Manager, Doctor, Entrepreneur" required value="Product Consultant">
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-company">Current Organization</label>
+                    <input type="text" id="ob-company" class="form-control" placeholder="E.g. Amazon, McKinsey, Self-Employed" required value="Tech Corp">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-income">Annual Income</label>
+                    <select id="ob-income" class="form-control" required>
+                      <option value="₹10 - 15 Lakhs">₹10 - 15 Lakhs</option>
+                      <option value="₹15 - 20 Lakhs">₹15 - 20 Lakhs</option>
+                      <option value="₹25 - 35 Lakhs" selected>₹25 - 35 Lakhs</option>
+                      <option value="₹50 Lakhs+">₹50 Lakhs+</option>
+                    </select>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-diet">Dietary Preferences</label>
+                    <select id="ob-diet" class="form-control" required>
+                      <option value="Vegetarian">Pure Vegetarian</option>
+                      <option value="Non-Vegetarian">Non-Vegetarian</option>
+                      <option value="Eggetarian">Eggetarian</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="pane-navigation">
+                  <button type="button" class="btn btn-outline btn-prev" data-prev="2"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                  <button type="button" class="btn btn-gold btn-next" data-next="4">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+              <!-- STEP 4: PARTNER EXPECTATIONS & SUBMIT -->
+              <div class="onboarding-step-pane" id="pane-step-4">
+                <h2 class="pane-title">Desired Partner Match Expectations</h2>
+                <p class="pane-subtitle">This feeds into our real-time matching engine.</p>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-pref-minage">Minimum Age</label>
+                    <input type="number" id="ob-pref-minage" class="form-control" value="23" min="18" max="60" required>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-pref-maxage">Maximum Age</label>
+                    <input type="number" id="ob-pref-maxage" class="form-control" value="29" min="18" max="60" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group flex-1">
+                    <label for="ob-pref-religion">Preferred Religion</label>
+                    <select id="ob-pref-religion" class="form-control" required>
+                      <option value="Hindu">Hindu</option>
+                      <option value="Muslim">Muslim</option>
+                      <option value="Sikh">Sikh</option>
+                      <option value="Christian">Christian</option>
+                    </select>
+                  </div>
+                  <div class="form-group flex-1">
+                    <label for="ob-pref-diet">Diet Preference</label>
+                    <select id="ob-pref-diet" class="form-control" required>
+                      <option value="Vegetarian">Pure Vegetarian</option>
+                      <option value="Non-Vegetarian">Non-Vegetarian</option>
+                      <option value="Any" selected>No Bar (Any)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="ob-pref-income">Minimum Partner Annual Income</label>
+                  <select id="ob-pref-income" class="form-control" required>
+                    <option value="500000">₹5 Lakhs+</option>
+                    <option value="1200000" selected>₹12 Lakhs+</option>
+                    <option value="2500000">₹25 Lakhs+</option>
+                    <option value="5000000">₹50 Lakhs+</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="ob-bio">Short Bio (About Me)</label>
+                  <textarea id="ob-bio" class="form-control" rows="3" placeholder="Tell potential matches who you are, what you enjoy doing, and what characteristics you desire in a match." required>I am a passionate, career-oriented professional who loves travel, reading, and exploring culinary art. Looking to start a beautiful and collaborative journey of life.</textarea>
+                </div>
+
+                <div class="pane-navigation">
+                  <button type="button" class="btn btn-outline btn-prev" data-prev="3"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                  <button type="submit" class="btn btn-gold btn-large" id="onboarding-submit-btn"><i class="fa-solid fa-gift"></i> Create My Account</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DASHBOARD / MATCHES VIEW -->
+    <section id="view-dashboard" class="app-view">
+      <div class="dashboard-banner container">
+        <div class="banner-inner">
+          <div class="banner-content">
+            <h2 id="dashboard-welcome-title">Your Matched Sanctuary</h2>
+            <p>Our algorithm recommends matches based on your elite partner expectations criteria.</p>
+          </div>
+          <div class="premium-activation-widget" id="dash-premium-widget">
+            <span class="badge-royal"><i class="fa-solid fa-crown text-gold"></i> Standard Tier</span>
+            <button class="btn btn-gold btn-small" id="dash-upgrade-btn">Upgrade to Premium</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-container container">
+        <!-- Sidebar Filters Column -->
+        <aside class="dashboard-sidebar-filters">
+          <div class="filter-card">
+            <div class="filter-header">
+              <h3><i class="fa-solid fa-sliders"></i> Smart Filters</h3>
+              <button class="btn-clear" id="filters-reset-btn">Reset All</button>
+            </div>
+            
+            <div class="filter-group">
+              <label class="filter-title">Age Range</label>
+              <div class="filter-range">
+                <input type="number" id="filter-age-min" class="filter-input" value="20" placeholder="Min">
+                <span>to</span>
+                <input type="number" id="filter-age-max" class="filter-input" value="35" placeholder="Max">
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-religion" class="filter-title">Religion</label>
+              <select id="filter-religion" class="filter-select">
+                <option value="all">Any Religion</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Sikh">Sikh</option>
+                <option value="Christian">Christian</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-mothertongue" class="filter-title">Mother Tongue</label>
+              <select id="filter-mothertongue" class="filter-select">
+                <option value="all">Any Language</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Punjabi">Punjabi</option>
+                <option value="Malayalam">Malayalam</option>
+                <option value="Urdu">Urdu</option>
+                <option value="Gujarati">Gujarati</option>
+                <option value="Bengali">Bengali</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-title">Diet</label>
+              <div class="checkbox-options">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="filter-diet-veg" value="Vegetarian"> Vegetarian Only
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-income-min" class="filter-title">Min Annual Income</label>
+              <select id="filter-income-min" class="filter-select">
+                <option value="0">No Bar</option>
+                <option value="1000000">₹10 Lakhs+</option>
+                <option value="2000000">₹20 Lakhs+</option>
+                <option value="3500000">₹35 Lakhs+</option>
+                <option value="5000000">₹50 Lakhs+</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-verification" class="filter-title">Verification</label>
+              <div class="checkbox-options">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="filter-verified-id" value="true"> Aadhaar/ID Verified
+                </label>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Profiles Main Area -->
+        <div class="dashboard-profiles-area">
+          <div class="profiles-toolbar">
+            <div class="results-count" id="profiles-count-text">Showing 8 verified profiles</div>
+            <div class="sort-widget">
+              <label for="sort-profiles">Sort By: </label>
+              <select id="sort-profiles" class="sort-select">
+                <option value="match">Highest Compatibility</option>
+                <option value="age-asc">Age: Low to High</option>
+                <option value="age-desc">Age: High to Low</option>
+                <option value="income-desc">Income: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Profiles Grid -->
+          <div class="profiles-grid" id="dashboard-profiles-grid">
+            <!-- Dynamically populated from mockProfiles and user state -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SHORTLISTS VIEW -->
+    <section id="view-shortlist" class="app-view">
+      <div class="container container-narrow padding-top-md">
+        <div class="section-heading text-center">
+          <h2 class="section-title">Your Shortlisted Sanctuary</h2>
+          <p class="section-subtitle">Keep track of premium profiles you have shortlisted for consideration</p>
+          <div class="fancy-divider"><i class="fa-solid fa-heart"></i></div>
+        </div>
+        
+        <div class="shortlists-grid" id="shortlists-grid-container">
+          <!-- Shortlisted profile cards are rendered here dynamically -->
+        </div>
+        
+        <div class="empty-state" id="shortlist-empty-state" style="display:none;">
+          <div class="empty-icon"><i class="fa-regular fa-heart"></i></div>
+          <h3>No Profiles Shortlisted Yet</h3>
+          <p>Explore elite verified profiles in our matchmaking sanctuary and click the heart icon to save them here.</p>
+          <button class="btn btn-gold margin-top-md" id="shortlist-go-dash-btn">Discover Matches</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CHAT CENTER VIEW -->
+    <section id="view-chat" class="app-view">
+      <div class="chat-viewport container">
+        <div class="chat-sidebar">
+          <div class="chat-sidebar-header">
+            <h3><i class="fa-solid fa-comments"></i> Private Messages</h3>
+          </div>
+          <div class="conversations-list" id="chat-conversations-list">
+            <!-- Dynamic conversations rendered here -->
+          </div>
+        </div>
+        
+        <div class="chat-main-panel" id="chat-window-panel">
+          <!-- Chat Window Active State -->
+          <div class="chat-active-state" id="chat-active-view" style="display: none;">
+            <div class="chat-window-header">
+              <div class="header-profile-info" id="chat-header-profile-btn">
+                <img src="assets/bride_featured.png" alt="Active Chat Profile" class="chat-header-avatar" id="chat-header-avatar">
+                <div class="chat-header-text">
+                  <h4 id="chat-header-name">Priyanjali Sharma</h4>
+                  <span class="online-indicator"><span class="pulse-dot"></span> Active Now</span>
+                </div>
+              </div>
+              <div class="chat-header-actions">
+                <button class="btn-chat-action text-gold" id="chat-header-call-btn" title="Initiate Secure Voice Call">
+                  <i class="fa-solid fa-phone"></i> Secure Call
+                </button>
+                <button class="btn-chat-action text-gold" id="chat-header-reveal-btn" title="Reveal Premium Contact Details">
+                  <i class="fa-solid fa-address-book"></i> Contact Details
+                </button>
+              </div>
+            </div>
+            
+            <!-- Chat Messages Log -->
+            <div class="chat-messages-log" id="chat-messages-log">
+              <!-- Rendered messages -->
+            </div>
+
+            <!-- Predefined Interactive Replies Widget -->
+            <div class="interactive-suggestions-bar" id="chat-suggestions-bar">
+              <span class="suggestion-title"><i class="fa-solid fa-bolt text-gold"></i> Quick Replies: </span>
+              <div class="suggestions-list" id="chat-suggestions-list">
+                <button class="btn-suggest">Hi! I saw your profile and loved your thoughts.</button>
+                <button class="btn-suggest">Hello! Would you like to schedule a secure voice call?</button>
+                <button class="btn-suggest">Hi! Our expectations match beautifully. I'd love to connect.</button>
+              </div>
+            </div>
+
+            <!-- Chat Send Box -->
+            <div class="chat-input-area">
+              <form id="chat-message-form" class="chat-message-form">
+                <input type="text" id="chat-input-box" placeholder="Write a premium message..." autocomplete="off">
+                <button type="submit" class="btn btn-gold btn-send" id="chat-send-btn">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Chat Window Empty State -->
+          <div class="chat-empty-state" id="chat-empty-view">
+            <div class="chat-empty-icon"><i class="fa-regular fa-comment-dots"></i></div>
+            <h3>Your Messages Sanctuary</h3>
+            <p>Select a profile from the conversations list to begin private, encrypted chat, or initiate a conversation directly from their match profile card.</p>
+            <button class="btn btn-gold margin-top-md" id="chat-go-dash-btn">Find Matches to Chat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PREMIUM PLANS VIEW -->
+    <section id="view-plans" class="app-view">
+      <div class="pricing-header container">
+        <span class="tag-gold"><i class="fa-solid fa-crown text-gold"></i> SOVEREIGN UPGRADES</span>
+        <h2>Choose Your Matchmaking Legacy</h2>
+        <p class="pricing-subtitle">Directly contact your matching peers, unlock security credentials, and boost profile views up to 4x.</p>
+        
+        <div class="pricing-toggle-widget">
+          <span class="toggle-label active" id="toggle-lbl-monthly">Monthly</span>
+          <label class="switch">
+            <input type="checkbox" id="pricing-period-toggle">
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label" id="toggle-lbl-annual">Annual (Save 30%)</span>
+        </div>
+      </div>
+
+      <div class="pricing-cards-container container">
+        <!-- PLAN 1: GOLD PRIME -->
+        <div class="pricing-card">
+          <div class="plan-header">
+            <h3>Gold Prime</h3>
+            <p>Perfect for self-service matchmaking</p>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="price-val" id="price-gold">3,500</span>
+              <span class="duration" id="dur-gold">/ 3 Months</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> Send unlimited personalized messages</li>
+            <li><i class="fa-solid fa-circle-check"></i> View verified phone & email details (25 matches)</li>
+            <li><i class="fa-solid fa-circle-check"></i> 1.5x profile search visibility boost</li>
+            <li><i class="fa-solid fa-circle-check"></i> Core compatibility matching indexes</li>
+            <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Dedicated relationship concierge</li>
+            <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Exclusive access to elite VIP lounges</li>
+          </ul>
+          <div class="plan-action">
+            <button class="btn btn-outline btn-full buy-plan-btn" data-plan="Gold Prime">Unlock Gold Prime</button>
+          </div>
+        </div>
+
+        <!-- PLAN 2: DIAMOND ROYAL (RECOMMENDED) -->
+        <div class="pricing-card recommended">
+          <div class="recommended-badge"><i class="fa-solid fa-star"></i> MOST POPULAR</div>
+          <div class="plan-header">
+            <h3>Diamond Royal</h3>
+            <p>Ultimate interactive experience</p>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="price-val" id="price-diamond">6,200</span>
+              <span class="duration" id="dur-diamond">/ 3 Months</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> Send unlimited personalized messages</li>
+            <li><i class="fa-solid fa-circle-check"></i> View verified phone & email details (80 matches)</li>
+            <li><i class="fa-solid fa-circle-check"></i> 3x profile search visibility boost</li>
+            <li><i class="fa-solid fa-circle-check"></i> Advanced compatibility index breakdown</li>
+            <li><i class="fa-solid fa-circle-check"></i> Priority badge on search and direct chats</li>
+            <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Dedicated relationship concierge</li>
+          </ul>
+          <div class="plan-action">
+            <button class="btn btn-gold btn-full buy-plan-btn" data-plan="Diamond Royal">Unlock Diamond Royal</button>
+          </div>
+        </div>
+
+        <!-- PLAN 3: PLATINUM CONCIERGE -->
+        <div class="pricing-card VIP">
+          <div class="plan-header">
+            <h3>Platinum Concierge</h3>
+            <p>Assisted royal matchmaking</p>
+            <div class="plan-price">
+              <span class="currency">₹</span>
+              <span class="price-val" id="price-platinum">18,500</span>
+              <span class="duration" id="dur-platinum">/ 3 Months</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-circle-check"></i> <strong>Dedicated Relationship Manager</strong></li>
+            <li><i class="fa-solid fa-circle-check"></i> Unlimited contact reveals & messages</li>
+            <li><i class="fa-solid fa-circle-check"></i> 5x profile search visibility boost</li>
+            <li><i class="fa-solid fa-circle-check"></i> Curated matching shortlist sent weekly</li>
+            <li><i class="fa-solid fa-circle-check"></i> Assisted background credentials check</li>
+            <li><i class="fa-solid fa-circle-check"></i> Personalized wedding planning support</li>
+          </ul>
+          <div class="plan-action">
+            <button class="btn btn-outline btn-full buy-plan-btn" data-plan="Platinum Concierge">Unlock VIP Concierge</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= MODALS & DRAWER DETAILS ================= -->
+
+  <!-- sliding profile drawer detail view -->
+  <div class="drawer-overlay" id="profile-drawer-overlay"></div>
+  <aside class="profile-drawer" id="profile-drawer">
+    <button class="btn-close-drawer" id="close-drawer-btn" title="Close Profile Details"><i class="fa-solid fa-xmark"></i></button>
+    <div class="drawer-content-inner" id="drawer-dynamic-content">
+      <!-- Dynamic detailed profile content populated in app.js -->
+    </div>
+  </aside>
+
+  <!-- Secure Checkout Payment Dialog Modal -->
+  <div class="modal-overlay" id="checkout-modal-overlay"></div>
+  <div class="modal-card checkout-modal" id="checkout-modal">
+    <div class="modal-header">
+      <h3><i class="fa-solid fa-shield-halved text-gold"></i> PerfectRishta Secure Gateway</h3>
+      <button class="btn-modal-close" id="checkout-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="checkout-summary">
+        <span>Subscribing to:</span>
+        <h4 id="checkout-plan-name">Diamond Royal</h4>
+        <div class="checkout-price" id="checkout-plan-price">₹6,200</div>
+      </div>
+      <form id="checkout-payment-form" class="checkout-payment-form">
+        <div class="form-group">
+          <label for="co-cardnumber">Card Number</label>
+          <div class="input-icon-wrapper">
+            <i class="fa-solid fa-credit-card input-icon"></i>
+            <input type="text" id="co-cardnumber" class="form-control" placeholder="4111 2222 3333 4444" required value="4111 2222 3333 4444">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label for="co-expiry">Expiry Date</label>
+            <input type="text" id="co-expiry" class="form-control" placeholder="MM/YY" required value="12/28">
+          </div>
+          <div class="form-group flex-1">
+            <label for="co-cvv">CVV</label>
+            <input type="password" id="co-cvv" class="form-control" placeholder="123" required value="***">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gold btn-full btn-large margin-top-md" id="checkout-submit-btn">
+          <i class="fa-solid fa-lock"></i> Authorize Secure Payment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Custom Dialog Modal -->
+  <div class="modal-overlay" id="shared-modal-overlay"></div>
+  <div class="modal-card" id="shared-dialog-modal">
+    <div class="modal-header">
+      <h3 id="shared-modal-title">Verified Contact Details</h3>
+      <button class="btn-modal-close" id="shared-modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="shared-modal-body">
+      <!-- Dynamic body -->
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="app-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <div class="logo-area">
+          <div class="logo-icon text-gold"><i class="fa-solid fa-hands-praying"></i></div>
+          <div class="logo-text">
+            <span class="brand-title text-white">PerfectRishta</span>
+            <span class="brand-subtitle text-gold">Where Hearts Align in Luxury</span>
+          </div>
+        </div>
+        <p class="margin-top-sm">PerfectRishta is an elite, premium matchmaking platform catering to the finest Indian families across the globe. Built on security, confidentiality, and compatibility.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#dashboard">Discover Matches</a></li>
+          <li><a href="#shortlist">Shortlists</a></li>
+          <li><a href="#plans">Premium Plans</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Assurance & Security</h4>
+        <div class="badges-row">
+          <span class="security-badge"><i class="fa-solid fa-shield text-gold"></i> ISO 27001</span>
+          <span class="security-badge"><i class="fa-solid fa-lock text-gold"></i> SSL Encrypted</span>
+        </div>
+        <p class="margin-top-sm">&copy; 2026 PerfectRishta Matrimonial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link profiles.js mock data -->
+  <script src="profiles.js"></script>
+  <!-- Main application script -->
+  <script src="app.js"></script>
+</body>
+</html>
